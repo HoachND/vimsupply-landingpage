@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html { scroll-behavior: smooth; font-size: 112.5%; }
+body { font-family: var(--font-sans); }
+
+/* ─── GLASSMORPHISM ─── */
+.glass {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(14px);
+}
+
+/* ─── GRADIENT TEXT ─── */
+.gradient-text-supply {
+  background: linear-gradient(135deg, #4DA6FF 0%, #0047AB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── BENTO HOVER ─── */
+.bento-hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.bento-hover:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0,71,171,0.25);
+}
+
+/* ─── SUN RAY ─── */
+.sun-ray {
+  animation: sunPulse 4s ease-in-out infinite;
+}
+@keyframes sunPulse {
+  0%, 100% { opacity: 0.08; transform: scale(1); }
+  50% { opacity: 0.15; transform: scale(1.1); }
+}
+
+/* ─── PULSE RING ─── */
+.pulse-ring {
+  animation: pulseRing 2s ease-out infinite;
+}
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.6; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  100% { transform: scale(1.4); opacity: 0; box-shadow: 0 0 0 20px rgba(34,197,94,0); }
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #0047AB; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #4DA6FF; }
+
+/* ─── HIDE NEXT.JS DEV BADGES ─── */
+nextjs-portal, 
+#nextjs-portal, 
+#__next-build-watcher, 
+#__next-prerender-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
