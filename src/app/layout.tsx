@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: "Giải pháp vật tư công nghiệp toàn diện cho nhà máy & xưởng sản xuất",
     type: "website",
     url: "https://b2b.vimgroup.vn",
-    images: ["/images/logo-vimsupply.png"],
+    images: ["/images/og-vimsupply.png"],
   },
 };
 
