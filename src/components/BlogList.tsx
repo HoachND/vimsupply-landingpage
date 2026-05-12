@@ -33,13 +33,13 @@ export default function BlogList() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">
-            {isEn ? "Biomass " : "Tin Tức "}
-            <span className="text-orange-600">{isEn ? "Insights" : "Năng Lượng"}</span>
+            {isEn ? "Supply " : "Tin Tức "}
+            <span className="text-blue-700">{isEn ? "Insights" : "Vật Tư B2B"}</span>
           </h1>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg">
             {isEn 
-              ? "Stay updated with the latest trends, technologies, and policies in biomass energy."
-              : "Cập nhật những xu hướng, công nghệ và chính sách mới nhất về năng lượng sinh khối."}
+              ? "Stay updated with the latest trends in industrial supplies, packaging solutions, and B2B procurement."
+              : "Cập nhật những xu hướng, giải pháp mới nhất về vật tư công nghiệp và chuỗi cung ứng B2B."}
           </p>
         </motion.div>
 
@@ -60,7 +60,7 @@ export default function BlogList() {
                 <a href={`/blog/${post.slug}`}>
                   <div className="relative h-64 overflow-hidden">
                     <Image
-                      src={post.seoImage || "/images/banner-vimsolar.png"}
+                      src={post.seoImage || "/images/og-vimsupply.png"}
                       alt={isEn ? post.titleEn : post.titleVi}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"

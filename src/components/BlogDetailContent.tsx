@@ -41,7 +41,7 @@ export default function BlogDetailContent({ post }: { post: BlogPost }) {
 
           <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden mb-12 shadow-2xl">
             <Image
-              src={post.seoImage || "/images/banner-vimsolar.png"}
+              src={post.seoImage || "/images/og-vimsupply.png"}
               alt={isEn ? post.titleEn : post.titleVi}
               fill
               className="object-cover"

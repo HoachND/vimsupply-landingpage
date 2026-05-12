@@ -5,12 +5,12 @@ import { Phone, Mail, MapPin } from "lucide-react";
 export default function Footer() {
   const { t, language } = useI18n();
   const links = [
-    { href: "#hero", label: language === "vi" ? "Trang chủ" : "Home" },
-    { href: "#solutions", label: language === "vi" ? "Sản phẩm" : "Products" },
-    { href: "#benefits", label: language === "vi" ? "Lợi ích" : "Benefits" },
-    { href: "#about", label: language === "vi" ? "Về chúng tôi" : "About Us" },
-    { href: "#process", label: language === "vi" ? "Quy trình" : "Process" },
-    { href: "#contact", label: language === "vi" ? "Liên hệ" : "Contact" },
+    { href: "/#hero", label: language === "vi" ? "Trang chủ" : "Home" },
+    { href: "/#solutions", label: language === "vi" ? "Sản phẩm" : "Products" },
+    { href: "/#benefits", label: language === "vi" ? "Lợi ích" : "Benefits" },
+    { href: "/#about", label: language === "vi" ? "Về chúng tôi" : "About Us" },
+    { href: "/#process", label: language === "vi" ? "Quy trình" : "Process" },
+    { href: "/#contact", label: language === "vi" ? "Liên hệ" : "Contact" },
   ];
   return (
     <footer className="relative border-t border-gray-200 bg-white">

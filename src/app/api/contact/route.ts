@@ -40,24 +40,31 @@ export async function POST(req: Request) {
     }
 
     // 2. Send to Google Apps Script (Google Sheets & Auto-Reply Email)
-    if (GAS_WEBHOOK_URL) {
-      try {
-        await fetch(GAS_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name,
-            phone,
-            email,
-            productType,
-            note,
-            language,
-            source: "b2b.vimgroup.vn - VimSupply"
+    const PROJECT_GAS_URL = "https://script.google.com/macros/s/AKfycbzOolIYJZMSlAGooqwVC1GfXsRfOd12D3z3wwX-eBbiesQIJ2P9FoVztFYBskfaDN4Z/exec";
+    const GLOBAL_GAS_URL = "https://script.google.com/macros/s/AKfycbzVK3sPVnbDfcRxk8n_5vi-gRU2X_1GTXVHuU8kcrk6Kfk3wkpqKRDJACtb3msUFRm6/exec";
+    const GLOBAL_SHEET_ID = "1LAtBjiRbwTxt7qu9XSYwzbVMNYBvC6guq-Zv_Yp3Cf0";
+
+    try {
+      await Promise.all([
+        // Gửi cho dự án
+        fetch(PROJECT_GAS_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({ ...data, source: "b2b.vimgroup.vn - VimSupply" }),
+        }),
+        // Gửi cho Database Tổng VIMGROUP
+        fetch(GLOBAL_GAS_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({ 
+            ...data, 
+            source: "b2b.vimgroup.vn (contact-form)",
+            targetSheetId: GLOBAL_SHEET_ID 
           }),
-        });
-      } catch (error) {
-        console.error("GAS webhook error:", error);
-      }
+        })
+      ]);
+    } catch (gasError) {
+      console.error("GAS Synchronization Error (non-blocking):", gasError);
     }
 
     return NextResponse.json({ success: true });

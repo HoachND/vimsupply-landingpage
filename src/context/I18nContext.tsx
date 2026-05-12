@@ -121,7 +121,7 @@ const translations: Record<string, Record<string, string>> = {
   form_opt9: { vi: "Khác", en: "Other" },
   form_hotline: { vi: "Hotline 24/7", en: "Hotline 24/7" },
   form_office: { vi: "Văn phòng", en: "Office" },
-  form_office_addr: { vi: "Văn Phòng: B88, Phố Trúc, Khu đô thị Ecopark, Phụng Công, Hưng Yên", en: "Office: B88, Truc Street, Ecopark Urban Area, Phung Cong, Hung Yen" },
+  form_office_addr: { vi: "B88, Phố Trúc, Khu đô thị Ecopark, Phụng Công, Hưng Yên", en: "B88, Truc Street, Ecopark Urban Area, Phung Cong, Hung Yen" },
   form_factory: { vi: "Nhà máy", en: "Factory" },
   form_factory_addr: { vi: "KCN Phố Nối A, Văn Lâm, Hưng Yên", en: "Pho Noi A IP, Van Lam, Hung Yen" },
   form_secure: { vi: "🔒 Thông tin của bạn được bảo mật tuyệt đối", en: "🔒 Your information is completely secured" },
