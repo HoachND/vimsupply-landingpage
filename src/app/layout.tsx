@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Chatbot from "../components/Chatbot";
 
 export const metadata: Metadata = {
   title: "VimSupply — Chuỗi Cung Ứng Vật Tư Công Nghiệp B2B | VIMGROUP",
@@ -36,7 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </head>
-      <body className="bg-[#050a14] text-white antialiased">{children}</body>
+      <body className="bg-[#050a14] text-white antialiased">
+        {children}
+        <Chatbot />
+      </body>
     </html>
   );
 }

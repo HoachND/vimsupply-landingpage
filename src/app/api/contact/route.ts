@@ -52,7 +52,7 @@ export async function POST(req: Request) {
             productType,
             note,
             language,
-            source: "VimSupply B2B Landing Page"
+            source: "b2b.vimgroup.vn - VimSupply"
           }),
         });
       } catch (error) {
